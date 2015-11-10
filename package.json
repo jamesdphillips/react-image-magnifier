@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A react component that accepts a high-res source image and produces a magnifier window on mouse hover over the part of the image the cursor is over",
   "main": "index.js",
+  "peerDependencies": {
+    "react": ">=0.13.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
