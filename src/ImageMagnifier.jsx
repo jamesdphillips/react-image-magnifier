@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 var Magnifier = React.createClass({
 
@@ -152,7 +153,7 @@ var ImageMagnifier = React.createClass({
     },
 
     onMouseMove (e) {
-        var offset = getOffset(this.getDOMNode());
+        var offset = getOffset(ReactDOM.findDOMNode(this));
 
         this.setState({
             x: e.clientX + (window.scrollX || window.pageXOffset),
@@ -163,7 +164,7 @@ var ImageMagnifier = React.createClass({
     },
 
     componentDidUpdate() {
-        React.render(<Magnifier
+        ReactDOM.render(<Magnifier
             size={this.props.size}
             smallImage={this.props.image}
             zoomImage={this.props.zoomImage}
